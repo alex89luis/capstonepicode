@@ -1,0 +1,34 @@
+<p>profilo works!</p>
+
+<div *ngIf="user">
+  <h1>{{ user.firstName }}'s Profile</h1>
+
+  <div>
+    <label for="firstName">First Name:</label>
+    <input id="firstName" [(ngModel)]="user.firstName" type="text">
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" [(ngModel)]="user.lastName" type="text">
+  </div>
+  <div>
+    <label for="username">Username:</label>
+    <input id="username" [(ngModel)]="user.username" type="text">
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="user.email" type="text">
+  </div>
+  <div>
+    <label for="citta">City:</label>
+    <input id="citta" [(ngModel)]="user.citta" type="text">
+  </div>
+  <div>
+    <label for="codiceFiscale">Codice Fiscale:</label>
+    <input id="codiceFiscale" [(ngModel)]="user.codiceFiscale" type="text">
+  </div>
+
+  
+
+  <button (click)="onSave()">Salva Profilo</button>
+</div>

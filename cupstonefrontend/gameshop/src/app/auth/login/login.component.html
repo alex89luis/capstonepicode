@@ -1,0 +1,13 @@
+<h1 class="text-white">Accedi</h1>
+
+<form (ngSubmit)="signIn()">
+  <input type="text" name="email"
+         [(ngModel)]="loginData.email"
+         class="form-control w-25" placeholder="email">
+
+  <input type="password" name="password"
+         [(ngModel)]="loginData.password"
+         class="form-control w-25" placeholder="password">
+
+  <button type="submit" class="btn btn-warning">Accedi</button>
+</form>

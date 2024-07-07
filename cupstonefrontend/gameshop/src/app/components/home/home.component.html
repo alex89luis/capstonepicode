@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div *ngFor="let prodotto of prodotti" class="card" style="width: 18rem;">
+          <img src="{{prodotto.immagine}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{prodotto.nome}}</h5>
+            <p class="card-text">{{prodotto.descrizione}}</p>
+            <button (click)="addProdottoToCarrello(prodotto)" class="btn btn-warning">Aggiungi al carrello</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <app-cart></app-cart>
+      </div>
+    </div>
+  </div>
+</div>
