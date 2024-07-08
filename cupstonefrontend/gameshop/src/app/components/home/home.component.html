@@ -1,13 +1,17 @@
-<div class="container-fluid">
-  <div class="container">
+<div id="bg" class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-8">
-        <div *ngFor="let prodotto of prodotti" class="card" style="width: 18rem;">
-          <img src="{{prodotto.immagine}}" class="card-img-top" alt="...">
+        <div class="row">
+          <div *ngFor="let prodotto of prodotti" class="col-4">
+        <div  class="card bg-black">
+          <img src="{{prodotto.immagine}}" class="card-img-top ratio ratio-1x1" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{prodotto.nome}}</h5>
-            <p class="card-text">{{prodotto.descrizione}}</p>
-            <button (click)="addProdottoToCarrello(prodotto)" class="btn btn-warning">Aggiungi al carrello</button>
+            <h5 class="card-title text-warning">{{prodotto.nome}}</h5>
+            <p class="card-text text-warning">{{prodotto.descrizione}}</p>
+            <button (click)="addProdottoToCarrello(prodotto)" class="btn btn-warning text-black fw-bold">Aggiungi</button>
+          </div>
+          </div>
           </div>
         </div>
       </div>

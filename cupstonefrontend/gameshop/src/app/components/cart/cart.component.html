@@ -1,11 +1,11 @@
-<div class="cart-container bg-light rounded-5">
-  <h2>Il tuo Carrello</h2>
-  <div *ngIf="prodotti.length === 0">Il tuo carrello è vuoto.</div>
+<div class="cart-container bg-warning rounded-2 w-50">
+  <h2 class="text-black">Carrello</h2>
+  <div class="text-black" *ngIf="prodotti.length === 0"></div>
   <div *ngFor="let prodotto of prodotti">
-    <div>{{ prodotto.nome }} - {{ prodotto.prezzo }}€</div>
+    <div class="text-black">{{ prodotto.nome }} - {{ prodotto.prezzo }}€</div>
     <!-- Aggiungi qui eventuali dettagli del prodotto -->
   </div>
-  <button *ngIf="prodotti.length > 0" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">Checkout</button>
+  <button *ngIf="prodotti.length > 0" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#checkoutModal">Salva</button>
   <button *ngIf="prodotti.length > 0" (click)="clearCarrello()" class="btn btn-danger">Svuota Carrello</button>
 </div>
 
@@ -14,12 +14,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="checkoutModalLabel">Confermi di voler procedere al checkout?</h5>
+        <h5 class="modal-title text-black" id="checkoutModalLabel">Confermi di voler procedere con l'acquisto?</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="confirmCheckout()">Si</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annulla</button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="confirmCheckout()">Si</button>
       </div>
     </div>
   </div>
@@ -30,11 +30,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="successModalLabel">Checkout avvenuto con successo!</h5>
+        <h5 class="modal-title text-black" id="successModalLabel">Acquisto avvenuto con successo!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Ok</button>
       </div>
     </div>
   </div>
